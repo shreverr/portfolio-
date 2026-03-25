@@ -11,7 +11,7 @@ export default function ExperienceSection() {
 
       <Accordion type="single" collapsible className="w-full">
         {experiences.map((exp) => (
-          <AccordionItem key={exp.id} value={exp.id} className="border-border/60">
+          <AccordionItem key={exp.id} value={exp.id} className="border-border/60 transition-colors duration-150 hover:border-border">
             <AccordionTrigger className="py-4 hover:no-underline group">
               <div className="flex items-center gap-3 flex-1 min-w-0">
                 {/* Company icon */}

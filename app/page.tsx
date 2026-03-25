@@ -2,6 +2,7 @@ import { profile, socials, achievements } from "./data"
 import CoverHero from "./components/CoverHero"
 import ExperienceSection from "./components/ExperienceSection"
 import ProjectsSection from "./components/ProjectsSection"
+import AnimateIn from "./components/AnimateIn"
 import { Avatar, AvatarImage, AvatarFallback } from "./components/ui/avatar"
 import { Button } from "./components/ui/button"
 
@@ -69,7 +70,7 @@ export default function Home() {
         <CoverHero />
 
         {/* Profile */}
-        <div className="mt-4">
+        <div className="mt-4 animate-fade-up" style={{ animationDelay: "80ms" }}>
           {/* Avatar + socials row */}
           <div className="flex items-end justify-between mb-3">
             <Avatar className="w-[68px] h-[68px] border-[3px] border-background -mt-10 relative z-10 shadow-lg">
@@ -111,27 +112,29 @@ export default function Home() {
         </div>
 
         {/* Experience */}
-        <ExperienceSection />
+        <AnimateIn><ExperienceSection /></AnimateIn>
 
         {/* Projects */}
         <ProjectsSection />
 
         {/* Achievements */}
-        <AchievementsSection />
+        <AnimateIn><AchievementsSection /></AnimateIn>
 
         {/* CTA footer */}
-        <section className="mt-12 mb-6 text-center">
-          <p className="text-muted-foreground text-[13px] mb-4">
-            Have something in mind? Let&apos;s build it.
-          </p>
-          <Button
-            asChild
-            className="rounded-full px-6 text-[13px] font-semibold"
-            style={{ background: "linear-gradient(135deg, #8b5cf6, #6366f1)" }}
-          >
-            <a href="mailto:verma2007s@gmail.com">Get in touch ↗</a>
-          </Button>
-        </section>
+        <AnimateIn>
+          <section className="mt-12 mb-6 text-center">
+            <p className="text-muted-foreground text-[13px] mb-4">
+              Have something in mind? Let&apos;s build it.
+            </p>
+            <Button
+              asChild
+              className="rounded-full px-6 text-[13px] font-semibold"
+              style={{ background: "linear-gradient(135deg, #8b5cf6, #6366f1)" }}
+            >
+              <a href="mailto:verma2007s@gmail.com">Get in touch ↗</a>
+            </Button>
+          </section>
+        </AnimateIn>
 
         <p className="text-center text-muted-foreground/40 text-[11px] pb-6">
           Built with Next.js &amp; shadcn/ui

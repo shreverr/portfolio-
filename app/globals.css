@@ -123,3 +123,21 @@ body {
 ::-webkit-scrollbar        { width: 5px; }
 ::-webkit-scrollbar-track  { background: transparent; }
 ::-webkit-scrollbar-thumb  { background: var(--border); border-radius: 4px; }
+
+/* ─── Scroll-triggered reveal ─── */
+.animate-in-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.5s cubic-bezier(0.16,1,0.3,1), transform 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+.animate-in-reveal[data-visible="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-in-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
