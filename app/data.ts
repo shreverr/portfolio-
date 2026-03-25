@@ -14,14 +14,6 @@ export const socials = [
   { name: "Email",    href: "mailto:verma2007s@gmail.com",                icon: "at" },
 ]
 
-export const spotify = {
-  status: "Last played",
-  track: "Blinding Lights",
-  artist: "The Weeknd",
-  albumColor: ["#1a1a2e", "#e94560"],
-  progress: 62,
-}
-
 export interface Experience {
   id: string
   company: string
@@ -41,7 +33,7 @@ export const experiences: Experience[] = [
     companyIcon: "YM",
     role: "Freelance Backend Engineer",
     period: "Jul 2025 – Aug 2025",
-    current: true,
+    current: false,
     description: [
       "Engineered a background job processing 20K+ image requests daily for employee compliance verification.",
       "Integrated Inngest for retries, throttling, and queue management.",
@@ -55,11 +47,11 @@ export const experiences: Experience[] = [
     company: "Pnacademy",
     companyIcon: "PN",
     role: "Freelance Full-Stack Developer",
-    period: "Jun 2024 – Dec 2024",
+    period: "Jun 2024 - Dec 2024",
     description: [
       "Built and deployed backend services serving 1,000+ monthly active users.",
       "Reduced search latency from 800ms to 200ms (75%) using PostgreSQL full-text search (tsvector).",
-      "Improved API response times by 40–60% using Redis caching, reducing database load.",
+      "Improved API response times by 40-60% using Redis caching, reducing database load.",
       "Implemented JWT authentication and RBAC for 3+ user roles.",
       "Integrated AWS S3 uploads handling 500+ files/day with pre-signed URLs.",
       "Deployed Dockerized services on AWS EC2 with Nginx and SSL — 99%+ uptime.",
@@ -86,7 +78,7 @@ export const projects: Project[] = [
     name: "DB Stencil",
     description: "Visual database schema platform with 500+ users — real-time schema design, code generation for Prisma, Drizzle, DBML & SQL DDL.",
     tags: ["TypeScript", "React", "PostgreSQL"],
-    href: "#",
+    href: "https://dbstencil.app",
     gradient: ["#0c1445", "#1a3a6e", "#0d2137"],
     stars: "500+ users",
   },
@@ -95,7 +87,7 @@ export const projects: Project[] = [
     name: "Node Rizz",
     description: "AI-powered backend generator that converts natural language prompts into fully deployable APIs using Node-RED and Python models.",
     tags: ["Node.js", "Python", "Node-RED", "AI"],
-    href: "https://github.com/shreverr",
+    href: "https://github.com/shreverr/node-rizz",
     gradient: ["#1a0533", "#2d0b6b", "#1a0533"],
     stars: "Open Source",
   },
@@ -104,7 +96,7 @@ export const projects: Project[] = [
     name: "HTTP Server",
     description: "HTTP server built from scratch in Go supporting GET, POST, and PUT — handles multiple concurrent client connections.",
     tags: ["Go", "Networking", "Systems"],
-    href: "https://github.com/shreverr",
+    href: "https://github.com/shreverr/http-server-go",
     gradient: ["#0a1a0a", "#0d3b0d", "#133a13"],
     stars: "Open Source",
   },

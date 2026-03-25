@@ -1,11 +1,9 @@
 import { profile, socials, achievements } from "./data"
 import CoverHero from "./components/CoverHero"
-import SpotifyWidget from "./components/SpotifyWidget"
 import ExperienceSection from "./components/ExperienceSection"
 import ProjectsSection from "./components/ProjectsSection"
 import { Avatar, AvatarImage, AvatarFallback } from "./components/ui/avatar"
 import { Button } from "./components/ui/button"
-import { Badge } from "./components/ui/badge"
 
 function AchievementsSection() {
   return (
@@ -110,8 +108,6 @@ export default function Home() {
             {profile.bio.replace("I build from zero. ", "")}
           </p>
 
-          {/* Spotify widget */}
-          <SpotifyWidget />
         </div>
 
         {/* Experience */}
