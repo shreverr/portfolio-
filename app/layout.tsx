@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google"
 import "./globals.css"
+import { Analytics } from "@vercel/analytics/next"
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] })
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] })
@@ -14,12 +15,13 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Shreshth Verma — Backend-focused Full Stack Developer",
   description:
-    "Portfolio of Shreshth Verma. Built systems handling 20K+ daily jobs, 1K+ users, and reduced API latency by up to 60%.",
+    "Portfolio of Shreshth Verma, Backend-focused Full Stack Developer. Built systems handling 20K+ daily jobs, 1K+ users, and reduced API latency by up to 60%.",
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable}`}>
+      <Analytics/>
       <body>{children}</body>
     </html>
   )
