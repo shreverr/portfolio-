@@ -1,8 +1,8 @@
 export const profile = {
   name: "Shreshth Verma",
   handle: "shreverr",
-  tagline: "B.E. CS '26  •  Backend Dev  •  Builder  •  Open Source",
-  bio: "I build from zero. Backend-focused Full-Stack Developer with experience building and scaling production systems serving 1K+ users. Improved API latency by up to 60%, processed 20K+ daily tasks, and deployed scalable systems using AWS, Docker, and PostgreSQL.",
+  tagline: "B.E. CS '26  •  Backend Dev  •  AI Builder  •  Open Source",
+  bio: "I build from zero. Backend-focused Full-Stack Developer shipping AI products — currently building Timbre, a voice AI platform that drops a real-time agent on any website with one line of script. Experience scaling production systems to 1K+ users, cutting API latency by up to 60%, and processing 20K+ daily jobs on AWS, Docker, and PostgreSQL.",
   location: "Haridwar, Uttarakhand, India",
   website: "github.com/shreverr",
   availability: true,
@@ -73,6 +73,15 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: "0",
+    name: "Timbre",
+    description: "Voice AI platform that turns one line of script into a website voice agent — sub-500ms WebRTC, 50+ voices, knowledge bases, MCP & HTTP tools.",
+    tags: ["Next.js", "Hono", "LiveKit", "Python"],
+    href: "https://timbre.shrever.tech",
+    gradient: ["#2e0a0a", "#7c2d12", "#451a03"],
+    stars: "Live",
+  },
   {
     id: "1",
     name: "DB Stencil",
