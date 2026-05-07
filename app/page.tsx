@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { profile, socials, achievements } from "./data"
 import CoverHero from "./components/CoverHero"
 import ExperienceSection from "./components/ExperienceSection"
@@ -5,6 +6,27 @@ import ProjectsSection from "./components/ProjectsSection"
 import AnimateIn from "./components/AnimateIn"
 import { Avatar, AvatarImage, AvatarFallback } from "./components/ui/avatar"
 import { Button } from "./components/ui/button"
+
+type Visitor = { name?: string; company?: string; role?: string }
+
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<Visitor>
+}): Promise<Metadata> {
+  const { name, company } = await searchParams
+  const base =
+    process.env.NEXT_PUBLIC_BASE_URL ??
+    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000")
+  const ogUrl = new URL("/api/og", base)
+  if (name) ogUrl.searchParams.set("name", name)
+  if (company) ogUrl.searchParams.set("company", company)
+  return {
+    openGraph: {
+      images: [{ url: ogUrl.toString(), width: 1200, height: 630, alt: "Shreshth Verma — Portfolio" }],
+    },
+  }
+}
 
 function AchievementsSection() {
   return (
@@ -59,8 +81,30 @@ function SocialIcon({ icon, href, label }: { icon: string; href: string; label: 
   )
 }
 
-export default function Home() {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<Visitor>
+}) {
+  const { name, company, role } = await searchParams
   const initials = profile.name.split(" ").map((n) => n[0]).join("")
+
+  const mailtoSubject = name
+    ? `Hi Shreshth — ${name}${company ? ` from ${company}` : ""}`
+    : ""
+  const mailtoHref = mailtoSubject
+    ? `mailto:verma2007s@gmail.com?subject=${encodeURIComponent(mailtoSubject)}`
+    : "mailto:verma2007s@gmail.com"
+
+  const ctaCopy = (() => {
+    if (role === "recruiter" && company)
+      return `Open to roles at ${company}. Let’s talk${name ? `, ${name}` : ""}.`
+    if (role === "recruiter")
+      return `Open to new roles. Let’s talk${name ? `, ${name}` : ""}.`
+    if (name && company) return `${name}, what’s ${company} building? Let’s chat.`
+    if (name) return `Let’s build something, ${name}.`
+    return "Have something in mind? Let’s build it."
+  })()
 
   return (
     <main className="min-h-screen py-10 px-4">
@@ -87,6 +131,14 @@ export default function Home() {
               {socials.map((s) => (
                 <SocialIcon key={s.name} icon={s.icon} href={s.href} label={s.name} />
               ))}
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-8 px-3 rounded-full border border-border text-[11px] font-medium text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-colors duration-150 flex items-center"
+              >
+                Resume ↗
+              </a>
             </div>
           </div>
 
@@ -105,6 +157,9 @@ export default function Home() {
 
           {/* Bio */}
           <p className="text-foreground/80 text-[14px] leading-[1.75]">
+            {name && (
+              <>Hey <span className="text-violet-400 font-medium">{name}</span> —{" "}</>
+            )}
             <span className="font-semibold text-foreground">I build from zero.</span>{" "}
             {profile.bio.replace("I build from zero. ", "")}
           </p>
@@ -123,16 +178,16 @@ export default function Home() {
         {/* CTA footer */}
         <AnimateIn>
           <section className="mt-12 mb-6 text-center">
-            <p className="text-muted-foreground text-[13px] mb-4">
-              Have something in mind? Let&apos;s build it.
-            </p>
-            <Button
-              asChild
-              className="rounded-full px-6 text-[13px] font-semibold"
-              style={{ background: "linear-gradient(135deg, #8b5cf6, #6366f1)" }}
-            >
-              <a href="mailto:verma2007s@gmail.com">Get in touch ↗</a>
-            </Button>
+            <p className="text-muted-foreground text-[13px] mb-4">{ctaCopy}</p>
+            <div className="flex items-center justify-center gap-3">
+              <Button
+                asChild
+                className="rounded-full px-6 text-[13px] font-semibold"
+                style={{ background: "linear-gradient(135deg, #8b5cf6, #6366f1)" }}
+              >
+                <a href={mailtoHref}>Get in touch ↗</a>
+              </Button>
+            </div>
           </section>
         </AnimateIn>
 
