@@ -60,10 +60,10 @@ export async function GET(request: NextRequest) {
         >
           {name ? (
             <>
-              <span>{name}, want a backend dev who ships?</span>
+              <span>{name}, want an AI engineer who ships?</span>
             </>
           ) : (
-            <span>Backend dev who actually ships.</span>
+            <span>Full-stack &amp; AI engineer who ships.</span>
           )}
         </div>
 
@@ -79,14 +79,14 @@ export async function GET(request: NextRequest) {
             fontWeight: 600,
           }}
         >
-          <span style={{ color: '#a78bfa' }}>20K+</span>
-          <span style={{ color: '#7a7a7a' }}>daily jobs</span>
+          <span style={{ color: '#a78bfa' }}>600K+</span>
+          <span style={{ color: '#7a7a7a' }}>jobs/month</span>
           <span style={{ color: '#3a3a3a', margin: '0 12px' }}>·</span>
-          <span style={{ color: '#a78bfa' }}>1K+</span>
+          <span style={{ color: '#a78bfa' }}>500+</span>
           <span style={{ color: '#7a7a7a' }}>users</span>
           <span style={{ color: '#3a3a3a', margin: '0 12px' }}>·</span>
-          <span style={{ color: '#a78bfa' }}>60%</span>
-          <span style={{ color: '#7a7a7a' }}>faster APIs</span>
+          <span style={{ color: '#a78bfa' }}>&lt;500ms</span>
+          <span style={{ color: '#7a7a7a' }}>voice AI</span>
         </div>
 
         {/* Attribution row — italic name + CTA */}
@@ -114,7 +114,7 @@ export async function GET(request: NextRequest) {
               Shreshth Verma
             </span>
             <span style={{ fontSize: 20, color: '#7a7a7a', marginTop: 10 }}>
-              Backend &amp; AI · open to roles
+              Co-Founder @ Olange · Full-Stack &amp; AI
             </span>
           </div>
           <div

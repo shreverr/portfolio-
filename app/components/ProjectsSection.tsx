@@ -29,7 +29,7 @@ export default function ProjectsSection() {
                     <div className="w-2 h-2 rounded-full bg-yellow-500/70" />
                     <div className="w-2 h-2 rounded-full bg-green-500/70" />
                     <div className="flex-1 mx-2 h-2.5 rounded bg-white/10 text-[7px] text-white/40 flex items-center px-1.5 overflow-hidden">
-                      {project.name.toLowerCase()}.dev
+                      {project.name.toLowerCase().replace(/\s+/g, "")}.dev
                     </div>
                   </div>
 

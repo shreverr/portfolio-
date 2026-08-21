@@ -13,9 +13,9 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: "Shreshth Verma — Backend-focused Full Stack Developer",
+  title: "Shreshth Verma — Full-Stack & AI Engineer",
   description:
-    "Portfolio of Shreshth Verma, Backend-focused Full Stack Developer. Built systems handling 20K+ daily jobs, 1K+ users, and reduced API latency by up to 60%.",
+    "Portfolio of Shreshth Verma, Full-Stack & AI Engineer and Co-Founder of Olange. AI systems, browser automation, and scalable backend infrastructure.",
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

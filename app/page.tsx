@@ -37,7 +37,7 @@ function AchievementsSection() {
       <div className="flex flex-col gap-2">
         {achievements.map((a, i) => (
           <div key={i} className="flex items-center gap-3 py-3 border-b border-border/60 last:border-0">
-            <span className="text-yellow-400 text-lg shrink-0">🏆</span>
+            <span className="text-yellow-400 text-lg shrink-0">{a.startsWith("Winner") ? "🏆" : "🎓"}</span>
             <p className="text-foreground/80 text-[13.5px]">{a}</p>
           </div>
         ))}

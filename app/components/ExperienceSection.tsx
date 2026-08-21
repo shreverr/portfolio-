@@ -1,3 +1,5 @@
+"use client"
+import { ArrowUpRight } from "lucide-react"
 import { experiences } from "../data"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion"
 import { Badge } from "./ui/badge"
@@ -27,7 +29,20 @@ export default function ExperienceSection() {
                 {/* Company + role */}
                 <div className="text-left min-w-0 flex-1">
                   <p className="text-foreground text-[14px] font-medium leading-tight truncate group-hover:text-foreground/90">
-                    {exp.company}
+                    {exp.href ? (
+                      <a
+                        href={exp.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="inline-flex items-center gap-0.5 hover:text-violet-400 transition-colors duration-150"
+                      >
+                        {exp.company}
+                        <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
+                      </a>
+                    ) : (
+                      exp.company
+                    )}
                   </p>
                   <p className="text-muted-foreground text-[12px] truncate">{exp.role}</p>
                 </div>

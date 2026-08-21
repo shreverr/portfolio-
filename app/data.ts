@@ -1,16 +1,16 @@
 export const profile = {
   name: "Shreshth Verma",
   handle: "shreverr",
-  tagline: "B.E. CS '26  •  Backend Dev  •  AI Builder  •  Open Source",
-  bio: "I build from zero. Backend-focused Full-Stack Developer shipping AI products — currently building Timbre, a voice AI platform that drops a real-time agent on any website with one line of script. Experience scaling production systems to 1K+ users, cutting API latency by up to 60%, and processing 20K+ daily jobs on AWS, Docker, and PostgreSQL.",
-  location: "Haridwar, Uttarakhand, India",
+  tagline: "Full-Stack & AI Engineer  •  B.E. CS '26",
+  bio: "I build from zero. Started programming at 12, founded a software agency in college that shipped for clients across India and Israel, and now co-found Olange — an AI-native operating system for real estate teams. Past few years focused on AI systems, browser automation, scalable backend infrastructure, and developer tooling — Python, Playwright, LLMs, and modern cloud.",
+  location: "Bengaluru, Karnataka, India",
   website: "github.com/shreverr",
   availability: true,
 }
 
 export const socials = [
   { name: "GitHub",   href: "https://github.com/shreverr",                icon: "gh" },
-  { name: "LinkedIn", href: "https://linkedin.com/in/shreshth-verma",     icon: "li" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/shreshth-verma", icon: "li" },
   { name: "Email",    href: "mailto:verma2007s@gmail.com",                icon: "at" },
 ]
 
@@ -20,6 +20,7 @@ export interface Experience {
   companyIcon: string
   role: string
   period: string
+  href?: string
   current?: boolean
   description: string[]
   tags: string[]
@@ -29,36 +30,78 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     id: "1",
-    company: "Yes Madam",
-    companyIcon: "YM",
-    role: "Freelance Backend Engineer",
-    period: "Jul 2025 – Aug 2025",
-    current: false,
+    company: "Olange",
+    companyIcon: "OL",
+    role: "Co-Founder",
+    period: "Apr 2026 – Present",
+    href: "https://olange.app",
+    current: true,
     description: [
-      "Engineered a background job processing 20K+ image requests daily for employee compliance verification.",
-      "Integrated Inngest for retries, throttling, and queue management.",
-      "Dockerized application for scalable deployment.",
+      "Building an AI-native operating system for real estate teams — unifying WhatsApp CRM, lead management, listings, site-visit scheduling, and AI workflows into one platform.",
+      "Architected the platform end to end on modern cloud infrastructure with a scalable, multi-tenant backend and real-time collaboration.",
+      "Built AI-powered features including lead qualification, WhatsApp automation, document intelligence, and property image enhancement (AI staging).",
+      "Lead product strategy, engineering, customer discovery, and go-to-market, working directly with real estate developers and brokerages.",
+    ],
+    tags: ["AI", "Multi-tenant", "WhatsApp API", "Cloud"],
+    iconBg: ["#c2410c", "#f97316"],
+  },
+  {
+    id: "2",
+    company: "DB Stencil",
+    companyIcon: "DB",
+    role: "Co-Founder",
+    period: "Nov 2025 – Mar 2026",
+    href: "https://dbstencil.app",
+    description: [
+      "Founded and built a visual database modeling platform, growing to 500+ users with real-time collaborative schema design and instant code generation.",
+      "Architected a schema engine supporting 50+ database operations — tables, relationships, indexes, constraints, and advanced modeling features.",
+      "Built multi-framework code generation for DBML, Prisma, Drizzle ORM, and SQL DDL.",
+      "Designed a robust state-synchronization and persistence system for complex diagrams, enabling seamless editing, versioning, and project management.",
+    ],
+    tags: ["TypeScript", "React", "PostgreSQL", "Prisma", "Drizzle"],
+    iconBg: ["#4338ca", "#6366f1"],
+  },
+  {
+    id: "3",
+    company: "YesMadam",
+    companyIcon: "YM",
+    role: "AI Automation Engineer",
+    period: "Jul 2025 – Aug 2025",
+    description: [
+      "Built a high-throughput background processing system handling 600K+ image verification requests per month for employee compliance workflows.",
+      "Designed resilient asynchronous pipelines using Inngest with automatic retries, rate limiting, and queue orchestration.",
+      "Optimized processing reliability and throughput while reducing operational overhead; containerized services with Docker for consistent, scalable deployments.",
     ],
     tags: ["Node.js", "Inngest", "Docker", "TypeScript"],
     iconBg: ["#be185d", "#ec4899"],
   },
   {
-    id: "2",
+    id: "4",
     company: "Pnacademy",
     companyIcon: "PN",
-    role: "Freelance Full-Stack Developer",
-    period: "Jun 2024 - Dec 2024",
+    role: "Freelance Backend Developer",
+    period: "Jun 2024 – Dec 2024",
     description: [
-      "Built and deployed backend services serving 1,000+ monthly active users.",
-      "Reduced search latency from 800ms to 200ms (75%) using PostgreSQL full-text search (tsvector).",
-      "Improved API response times by 40-60% using Redis caching, reducing database load.",
-      "Implemented JWT authentication and RBAC for 3+ user roles.",
-      "Integrated AWS S3 uploads handling 500+ files/day with pre-signed URLs.",
-      "Deployed Dockerized services on AWS EC2 with Nginx and SSL — 99%+ uptime.",
-      "Built AWS Lambda webhook automation reducing manual work by 90%.",
+      "Built and deployed backend services serving 1,000+ monthly active users using Node.js, TypeScript, PostgreSQL, and Redis.",
+      "Reduced search latency from 800ms to 200ms (75%) using PostgreSQL full-text search (tsvector); improved API response times 40–60% with Redis caching.",
+      "Implemented JWT authentication and RBAC (3+ roles) and AWS S3 uploads (500+ files/day) via pre-signed URLs.",
+      "Deployed Dockerized services on AWS EC2 with Nginx and SSL at 99%+ uptime.",
     ],
     tags: ["Node.js", "TypeScript", "PostgreSQL", "Redis", "AWS", "Docker"],
     iconBg: ["#0369a1", "#0ea5e9"],
+  },
+  {
+    id: "5",
+    company: "The Software Venture",
+    companyIcon: "SV",
+    role: "Founder",
+    period: "Jan 2023 – Jun 2024",
+    description: [
+      "Built and scaled a software development agency, delivering custom web and mobile solutions for 10+ clients across India and Israel.",
+      "Led projects end to end — discovery, architecture, development, and deployment.",
+    ],
+    tags: ["React", "Next.js", "Node.js", "TypeScript", "PostgreSQL"],
+    iconBg: ["#065f46", "#10b981"],
   },
 ]
 
@@ -75,21 +118,21 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "0",
-    name: "Timbre",
-    description: "Voice AI platform that turns one line of script into a website voice agent — sub-500ms WebRTC, 50+ voices, knowledge bases, MCP & HTTP tools.",
-    tags: ["Next.js", "Hono", "LiveKit", "Python"],
-    href: "https://timbre.shrever.tech",
-    gradient: ["#2e0a0a", "#7c2d12", "#451a03"],
-    stars: "Live",
+    name: "Autonomous Browser Agent",
+    description: "AI agent that executes plain-English tasks by driving a real anti-detect Firefox browser end-to-end — shopping, research, form-filling, checkout — with a narrating REPL and human confirmation before consequential actions.",
+    tags: ["Python", "Playwright", "Camoufox", "LLM"],
+    href: "https://www.youtube.com/watch?v=tQ6L_3TpozA",
+    gradient: ["#0a0a1f", "#1e1b4b", "#312e81"],
+    stars: "Demo",
   },
   {
     id: "1",
-    name: "DB Stencil",
-    description: "Visual database schema platform with 500+ users — real-time schema design, code generation for Prisma, Drizzle, DBML & SQL DDL.",
-    tags: ["TypeScript", "React", "PostgreSQL"],
-    href: "https://dbstencil.app",
-    gradient: ["#0c1445", "#1a3a6e", "#0d2137"],
-    stars: "500+ users",
+    name: "Timbre",
+    description: "Voice AI platform that turns one line of script into a website voice agent — sub-500ms voice-to-voice via WebRTC, Deepgram STT, OpenRouter LLM, Cartesia TTS, pgvector RAG, MCP & HTTP tools.",
+    tags: ["Hono", "Bun", "LiveKit", "Supabase"],
+    href: "https://timbre.shrever.tech",
+    gradient: ["#2e0a0a", "#7c2d12", "#451a03"],
+    stars: "Live",
   },
   {
     id: "2",
@@ -112,8 +155,9 @@ export const projects: Project[] = [
 ]
 
 export const achievements = [
+  "B.E. Computer Science, Chitkara University — 2022–2026",
   "Winner — Chitkara Sandbox 2.0 Hackathon, March 2024",
-  "Winner — Shopclues Smart Cataloging Hackathon, March 2024",
+  "Winner — ShopClues Smart Cataloging Hackathon, March 2024",
 ]
 
-export const quote = "Built systems handling 20K+ daily jobs — 1K+ users — Reduced API latency by up to 60%"
+export const quote = "600K+ image jobs/month — 500+ users on DB Stencil — sub-500ms voice AI"
