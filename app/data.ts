@@ -35,7 +35,6 @@ export const experiences: Experience[] = [
     role: "Co-Founder",
     period: "Apr 2026 – Present",
     href: "https://olange.app",
-    current: true,
     description: [
       "Building an AI-native operating system for real estate teams — unifying WhatsApp CRM, lead management, listings, site-visit scheduling, and AI workflows into one platform.",
       "Architected the platform end to end on modern cloud infrastructure with a scalable, multi-tenant backend and real-time collaboration.",
