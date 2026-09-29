@@ -2,7 +2,7 @@ export const profile = {
   name: "Shreshth Verma",
   handle: "shreverr",
   tagline: "Full-Stack & AI Engineer  •  B.E. CS '26",
-  bio: "I build from zero. Started programming at 12, founded a software agency in college that shipped for clients across India and Israel, and now co-found Olange — an AI-native operating system for real estate teams. Past few years focused on AI systems, browser automation, scalable backend infrastructure, and developer tooling — Python, Playwright, LLMs, and modern cloud.",
+  bio: "I build from zero. Started programming at 12, founded a software agency in college that shipped for clients across India and Israel, co-founded DB Stencil and Olange, and most recently built a server-driven marketplace backend as an SDE Intern at Vingo. Past few years focused on AI systems, browser automation, scalable backend infrastructure, and developer tooling — Python, Playwright, LLMs, and modern cloud.",
   location: "Bengaluru, Karnataka, India",
   website: "github.com/shreverr",
   availability: true,
@@ -29,17 +29,33 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
+    id: "0",
+    company: "Vingo",
+    companyIcon: "VG",
+    role: "SDE Intern",
+    period: "Aug 2026 – Sep 2026",
+    description: [
+      "Architected the server-driven UI (SDUI) layer behind the mobile app's bidding and product screens, so UI and business rules ship from the backend with zero app-store releases. Built on a hexagonal (ports & adapters), CQRS-style NestJS backend.",
+      "Found and fixed a scaling flaw in API rate limiting: limits were applied per instance, so effective capacity grew N× under Cloud Run autoscaling. Made them a single distributed limit backed by Redis, with fail-closed error handling.",
+      "Designed the marketplace's core product feed with keyset (cursor) pagination, recursive CTE category-tree traversal and multi-dimensional filtering in PostgreSQL, keeping pagination stable and deterministic across sort orders.",
+      "Owned the internal admin platform end to end: orders, payments, shipments, user management, content moderation and a 6-step listing workflow with Google Maps geolocation.",
+      "Led the public website's redesign and technical SEO strategy (dynamic sitemaps, Open Graph, crawler controls), and built fuzzy search ranked by subsequence distance.",
+    ],
+    tags: ["TypeScript", "NestJS", "PostgreSQL", "Prisma", "Redis", "GCP Cloud Run", "Next.js"],
+    iconBg: ["#0f766e", "#14b8a6"],
+  },
+  {
     id: "1",
     company: "Olange",
     companyIcon: "OL",
     role: "Co-Founder",
-    period: "Apr 2026 – Present",
+    period: "Apr 2026 – Jul 2026",
     href: "https://olange.app",
     description: [
-      "Building an AI-native operating system for real estate teams — unifying WhatsApp CRM, lead management, listings, site-visit scheduling, and AI workflows into one platform.",
+      "Built an AI-native operating system for real estate teams — unifying WhatsApp CRM, lead management, listings, site-visit scheduling, and AI workflows into one platform.",
       "Architected the platform end to end on modern cloud infrastructure with a scalable, multi-tenant backend and real-time collaboration.",
       "Built AI-powered features including lead qualification, WhatsApp automation, document intelligence, and property image enhancement (AI staging).",
-      "Lead product strategy, engineering, customer discovery, and go-to-market, working directly with real estate developers and brokerages.",
+      "Led product strategy, engineering, customer discovery, and go-to-market, working directly with real estate developers and brokerages.",
     ],
     tags: ["AI", "Multi-tenant", "WhatsApp API", "Cloud"],
     iconBg: ["#c2410c", "#f97316"],
@@ -88,19 +104,6 @@ export const experiences: Experience[] = [
     ],
     tags: ["Node.js", "TypeScript", "PostgreSQL", "Redis", "AWS", "Docker"],
     iconBg: ["#0369a1", "#0ea5e9"],
-  },
-  {
-    id: "5",
-    company: "The Software Venture",
-    companyIcon: "SV",
-    role: "Founder",
-    period: "Jan 2023 – Jun 2024",
-    description: [
-      "Built and scaled a software development agency, delivering custom web and mobile solutions for 10+ clients across India and Israel.",
-      "Led projects end to end — discovery, architecture, development, and deployment.",
-    ],
-    tags: ["React", "Next.js", "Node.js", "TypeScript", "PostgreSQL"],
-    iconBg: ["#065f46", "#10b981"],
   },
 ]
 

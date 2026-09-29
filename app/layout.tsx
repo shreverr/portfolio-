@@ -15,7 +15,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Shreshth Verma — Full-Stack & AI Engineer",
   description:
-    "Portfolio of Shreshth Verma, Full-Stack & AI Engineer and Co-Founder of Olange. AI systems, browser automation, and scalable backend infrastructure.",
+    "Portfolio of Shreshth Verma, Full-Stack & AI Engineer. Previously SDE Intern at Vingo and Co-Founder of Olange and DB Stencil. AI systems, browser automation, and scalable backend infrastructure.",
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

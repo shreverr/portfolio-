@@ -114,7 +114,7 @@ export async function GET(request: NextRequest) {
               Shreshth Verma
             </span>
             <span style={{ fontSize: 20, color: '#7a7a7a', marginTop: 10 }}>
-              Co-Founder @ Olange · Full-Stack &amp; AI
+              Full-Stack &amp; AI Engineer
             </span>
           </div>
           <div
